@@ -1,22 +1,35 @@
-# PHP-BONES
+# LARAVEL-BONES
 
-A skeleton docker configuration for Apache - PHP - MYSQL Container<br>
+Laravel docker configuration
+
+Basic configuration includes :
+- Apache 2
+- PHP 7.4
+- MySQL or PostgreSQL
+- Laravel 7.x
+
 Includes PHP Composer
+## Dependencies
+
+OS
+- g++
+- libicu-dev
+- libpq-dev
+- libzip-dev
+- zip
+- zlib1g-dev
+
+Web Server
+- mysqli
+- pdo ( pdo_mysql and pdo_pgsql)
+- opcache
+- intl
+- bcmath
 ## Usage
 
-From terminal
-```bash
-docker-compose build
-docker-compose up
-```
+Set **.env** variables for database connection and which db to use in **docker-compose.yml** file.
 
-## Connect to container bash terminal
-
-Show container's list
+Then build and up the container.
 ```bash
-docker ps
-```
-Find the container id in the list and then
-```bash
-docker exec -it <container-id> bash
+docker-compose up -d --build
 ```
