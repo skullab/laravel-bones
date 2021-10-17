@@ -34,6 +34,13 @@ For more info or different configuration, visit official docker image
 https://hub.docker.com/_/php/
 
 Set **.env** variables for database connection and which db to use in **docker-compose.yml** file.
+```env
+MYSQL_ROOT_PASSWORD = root
+MYSQL_DATABASE = laravel
+MYSQL_USER = laravel
+MYSQL_PASSWORD = password
+````
+
 ```yml
 # MYSQL
   db:
