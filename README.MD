@@ -4,9 +4,9 @@ Laravel docker configuration
 
 Basic configuration includes :
 - Apache 2
-- PHP 7.4
+- PHP 7.4 ( 8.x )
 - MySQL or PostgreSQL
-- Laravel 7.x
+- Laravel 7.x ( 8.x )
 
 Includes PHP Composer
 ## Dependencies
@@ -33,3 +33,4 @@ Then build and up the container.
 ```bash
 docker-compose up -d --build
 ```
+
