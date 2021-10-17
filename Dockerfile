@@ -12,8 +12,16 @@ RUN apt-get install -y \
     libzip-dev \
     # https://packages.debian.org/sid/zip
     zip \
+    # https://packages.debian.org/stretch/unzip
+    unzip \
     # https://packages.debian.org/buster/zlib1g-dev
-    zlib1g-dev
+    zlib1g-dev \
+    # https://packages.debian.org/testing/web/curl
+    curl \
+    # https://nodejs.org/en/
+    nodejs \
+    # https://www.npmjs.com/
+    npm
 
 # PHP EXTENSIONS
 # mysqli (backward compatibility)
@@ -39,8 +47,11 @@ RUN docker-php-ext-install \
 # https://www.php.net/manual/en/book.bc.php
 RUN docker-php-ext-install bcmath && docker-php-ext-enable bcmath
 
-# INSTALL COMPOSER
+# INSTALL PHP COMPOSER
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Work directory
 WORKDIR /var/www/laravel
+
+# Change user permission and enable mod_rewrite
+RUN chown -R www-data:www-data /var/www/laravel && a2enmod rewrite
