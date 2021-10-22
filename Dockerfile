@@ -32,6 +32,8 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN docker-php-ext-install pdo_mysql && docker-php-ext-enable pdo_mysql
 # PostgreSQL and Utils
 RUN docker-php-ext-install \
+    # https://www.php.net/manual/en/book.exif.php
+    exif \
     # https://www.php.net/manual/en/book.intl.php
     intl \
     # https://www.php.net/manual/en/book.opcache.php
