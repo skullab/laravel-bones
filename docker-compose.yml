@@ -1,4 +1,7 @@
 version: '3.8'
+volumes:
+  db-data:
+
 services:
   # WEB SERVER
   php-apache-environment:
@@ -26,6 +29,8 @@ services:
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
     ports:
       - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
   # POSTGRESQL
   #db:
   #  container_name: postgres
